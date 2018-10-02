@@ -22,7 +22,7 @@ let log (msg: string) =
 let ``Produce with Custom TimeStamp``() =
   let host =
       match Environment.GetEnvironmentVariable "CONFLUENT_KAFKA_TEST_BROKER" with
-      | x when String.IsNullOrWhiteSpace x -> "shared.kafka.eastus2.dev.jet.network:9092"
+      | x when String.IsNullOrWhiteSpace x -> "bootstrap_server"
       | brokers -> brokers
   let topic = "marvel-test-producer-p1"
   let batchMessagesCount = 2000
